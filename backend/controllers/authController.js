@@ -43,10 +43,9 @@ const register = async (req, res) => {
         email: email,
         password: password,
         username: username,
+        name: name,
         connection: 'Username-Password-Authentication',
         user_metadata: {
-          firstName: name.split(' ')[0] || name,
-          lastName: name.split(' ').slice(1).join(' ') || '',
           username: username,
           contactNumber: contactNumber,
           country: country
@@ -247,8 +246,6 @@ const updateProfile = async (req, res) => {
     await axios.patch(`${process.env.AUTH0_DOMAIN}api/v2/users/${user.auth0Id}`, {
       name,
       user_metadata: {
-        firstName: name.split(' ')[0] || name,
-        lastName: name.split(' ').slice(1).join(' ') || '',
         contactNumber,
         country
       }
@@ -363,9 +360,10 @@ const requestPasswordReset = async (req, res) => {
     const managementToken = await getAuth0ManagementToken();
 
     // Request password reset from Auth0
-    await axios.post(`${process.env.AUTH0_DOMAIN}api/v2/tickets/password-change`, {
+    await axios.post(`${process.env.AUTH0_DOMAIN}dbconnections/change_password`, {
       email,
-      connection_id: 'Username-Password-Authentication'
+      connection: 'Username-Password-Authentication',
+      client_id: process.env.AUTH0_CLIENT_ID
     }, {
       headers: {
         Authorization: `Bearer ${managementToken}`,

@@ -41,16 +41,6 @@ const Register = () => {
 
     const onSubmit = async (data) => {
         try {
-            // Log the data being sent to check field names
-            console.log('Registration data being sent:', {
-                email: data.email,
-                password: data.password,
-                name: data.name,
-                username: data.username,
-                contactNumber: data.contactNumber,
-                country: data.country
-            })
-
             await registerUser({
                 email: data.email,
                 password: data.password,
