@@ -49,8 +49,8 @@ A secure MERN stack e-commerce backend with Auth0 integration, built for the Ass
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd secure-ecommerce-backend
+git clone https://github.com/Rami2212/Secured-Ecommerce
+cd backend
 
 # Install dependencies
 npm install
@@ -66,62 +66,29 @@ PORT=5000
 NODE_ENV=development
 
 # MongoDB Configuration
-MONGODB_URI=mongodb+srv://your-username:your-password@cluster.mongodb.net/secure-ecommerce?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://ramitha:zuS1thh6iENLwRpz@cluster0.ecixdxy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
 # Auth0 Configuration
-AUTH0_DOMAIN=your-domain.auth0.com
-AUTH0_CLIENT_ID=your-client-id
-AUTH0_CLIENT_SECRET=your-client-secret
-AUTH0_AUDIENCE=https://your-api-identifier
+AUTH0_DOMAIN=https://dev-doebww1thx32e0ql.us.auth0.com/
+AUTH0_CLIENT_ID=IsEkANU931CkLWG8loCicGQlznxWfHGL
+AUTH0_CLIENT_SECRET=BSlagIpoQMBf41aTKQjGWa4j1a-pTPZBThrnDDUNo9xWHKIdNeT-wShJFr1Sd4IY
+AUTH0_AUDIENCE=https://dev-doebww1thx32e0ql.us.auth0.com/api/v2/
 
 # JWT Configuration
-JWT_SECRET=your-super-secret-jwt-key-here-make-it-long-and-complex
+JWT_SECRET=f5f02d56bcece445e84aca039344d1b47d50d140b597d0f8a6324688a1876951f285e40e5bb9f755f71a6dd8da88da845292990cc0939593fcef5930beff5de9
 
 # CORS Configuration
-FRONTEND_URL=http://localhost:3000
+FRONTEND_URL=http://localhost:5173
 
 # Rate Limiting
 RATE_LIMIT_WINDOW_MS=900000
 RATE_LIMIT_MAX_REQUESTS=100
 ```
 
-### 3. MongoDB Atlas Setup
-
-1. Create a MongoDB Atlas account at [https://www.mongodb.com/atlas](https://www.mongodb.com/atlas)
-2. Create a new cluster
-3. Create a database user with read/write permissions
-4. Whitelist your IP address
-5. Get the connection string and update `MONGODB_URI` in `.env`
-
-### 4. Auth0 Setup
-
-1. Create an Auth0 account at [https://auth0.com](https://auth0.com)
-2. Create a new Application (Single Page Application)
-3. Create a new API
-4. Configure the following settings:
-
-**Application Settings:**
-- Allowed Callback URLs: `http://localhost:3000/callback`
-- Allowed Logout URLs: `http://localhost:3000`
-- Allowed Web Origins: `http://localhost:3000`
-
-**API Settings:**
-- Enable RBAC
-- Add Permissions in Token
-
-5. Update the `.env` file with your Auth0 credentials
-
-### 5. Database Initialization
-
-Run the application to automatically create database indexes:
 
 ```bash
-npm run dev
+npm start
 ```
-
-### 6. Seed Data (Optional)
-
-You can create sample products by making POST requests to `/api/products` endpoint with admin credentials.
 
 ## API Endpoints
 
@@ -208,13 +175,6 @@ src/
 └── package.json         # Dependencies and scripts
 ```
 
-## Testing
-
-Run tests with:
-```bash
-npm test
-```
-
 ## Security Considerations
 
 1. **Environment Variables**: Never commit `.env` file to version control
@@ -235,13 +195,4 @@ The application includes comprehensive error handling:
 - Not found errors return 404
 - Server errors return 500 with sanitized messages
 
-## Contributing
-
-1. Follow the existing code style
-2. Add tests for new features
-3. Update documentation
-4. Ensure security best practices
-
-## License
-
-This project is licensed under the MIT License.
+Built with ❤️ using Node.js, Express.js and Auth0 with modern security practices.
