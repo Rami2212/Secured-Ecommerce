@@ -8,7 +8,6 @@
 [![Auth0](https://img.shields.io/badge/Auth0-OIDC-orange.svg)](https://auth0.com/)
 [![Security](https://img.shields.io/badge/Security-OWASP%20Top%2010-red.svg)](https://owasp.org/Top10/)
 
-
 ## 📚 Documentation Links
 
 - [Frontend Documentation](./frontend/README.md) - Detailed frontend setup and component documentation

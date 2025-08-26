@@ -86,7 +86,7 @@ export const useAuthStore = create(
                     // Updated to match expected response structure
                     set({
                         user: response.data.user,
-                        token, // keep same token
+                        token,
                         isAuthenticated: true,
                         loading: false,
                         error: null,

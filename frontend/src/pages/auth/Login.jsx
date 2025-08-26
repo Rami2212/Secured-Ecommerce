@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useAuthStore } from '../../stores/authStore'
 import { useNavigate, useLocation, Link } from 'react-router-dom'
-import {LogIn, Shield, Eye, EyeOff, ShoppingCart} from 'lucide-react'
+import { LogIn, Shield, Eye, EyeOff, ShoppingCart } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import Button from '../../components/ui/Button'
 import Input from '../../components/ui/Input'
@@ -13,6 +13,7 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const [showPassword, setShowPassword] = useState(false)
+    const [loginError, setLoginError] = useState('')
 
     const from = location.state?.from?.pathname || '/dashboard'
     const message = location.state?.message
@@ -25,7 +26,14 @@ const Login = () => {
 
     useEffect(() => {
         clearError()
+        setLoginError('')
     }, [clearError])
+
+    useEffect(() => {
+        if (error) {
+            setLoginError(error)
+        }
+    }, [error])
 
     useEffect(() => {
         if (isAuthenticated) {
@@ -36,9 +44,12 @@ const Login = () => {
     const onSubmit = async (data) => {
         try {
             clearError()
+            setLoginError('')
+            
             await login(data)
         } catch (error) {
             console.error('Login failed:', error)
+            setLoginError(error.message || 'Login failed. Please try again.')
         }
     }
 
@@ -79,9 +90,9 @@ const Login = () => {
                             )}
 
                             {/* Error message */}
-                            {error && (
+                            {(error || loginError) && (
                                 <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
-                                    {error}
+                                    {error || loginError}
                                 </div>
                             )}
 
