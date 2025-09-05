@@ -103,23 +103,3 @@ router.get('/health', (req, res) => {
 });
 
 module.exports = router;
-router.post('/register', authRateLimit, registerValidation, authController.register);
-router.post('/login', authRateLimit, loginValidation, authController.login);
-router.post('/refresh-token', authController.refreshToken);
-router.post('/forgot-password', authRateLimit, passwordResetValidation, authController.requestPasswordReset);
-
-// Protected routes
-router.get('/profile', authenticate, authController.getProfile);
-router.put('/profile', authenticate, updateProfileValidation, authController.updateProfile);
-router.post('/logout', authenticate, authController.logout);
-
-// Health check for auth service
-router.get('/health', (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    message: 'Auth service is running',
-    timestamp: new Date().toISOString()
-  });
-});
-
-module.exports = router;

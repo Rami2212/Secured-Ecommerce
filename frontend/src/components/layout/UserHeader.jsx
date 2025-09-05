@@ -19,7 +19,7 @@ const UserHeader = () => {
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
-                    <Link to="/dashboard" className="flex items-center space-x-2">
+                    <Link to="/" className="flex items-center space-x-2">
                         <ShoppingCart className="w-8 h-8 text-primary-600" />
                         <span className="text-xl font-bold text-gray-900">SecureCommerce</span>
                     </Link>

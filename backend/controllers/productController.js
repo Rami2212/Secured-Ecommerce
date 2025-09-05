@@ -1,9 +1,7 @@
 const Product = require('../models/Product');
 const { validationResult } = require('express-validator');
 
-/**
- * Get all products with pagination and filtering
- */
+/* Get all products with pagination and filtering */
 const getAllProducts = async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
@@ -75,9 +73,7 @@ const getAllProducts = async (req, res) => {
   }
 };
 
-/**
- * Get product by ID
- */
+/* Get product by ID */
 const getProductById = async (req, res) => {
   try {
     const { productId } = req.params;
@@ -114,9 +110,7 @@ const getProductById = async (req, res) => {
   }
 };
 
-/**
- * Search products
- */
+/* Search products */
 const searchProducts = async (req, res) => {
   try {
     const {
@@ -161,9 +155,7 @@ const searchProducts = async (req, res) => {
   }
 };
 
-/**
- * Get product categories
- */
+/* Get product categories */
 const getCategories = async (req, res) => {
   try {
     const categories = Product.getCategories();
@@ -184,9 +176,7 @@ const getCategories = async (req, res) => {
   }
 };
 
-/**
- * Get featured products
- */
+/* Get featured products */
 const getFeaturedProducts = async (req, res) => {
   try {
     const limit = parseInt(req.query.limit) || 8;
@@ -213,9 +203,7 @@ const getFeaturedProducts = async (req, res) => {
   }
 };
 
-/**
- * Create new product (Admin only)
- */
+/* Create new product (Admin only) */
 const createProduct = async (req, res) => {
   try {
     // Check validation errors
@@ -259,9 +247,7 @@ const createProduct = async (req, res) => {
   }
 };
 
-/**
- * Update product (Admin only)
- */
+/* Update product (Admin only) */
 const updateProduct = async (req, res) => {
   try {
     // Check validation errors
@@ -317,9 +303,7 @@ const updateProduct = async (req, res) => {
   }
 };
 
-/**
- * Delete product (Admin only)
- */
+/* Delete product (Admin only) */
 const deleteProduct = async (req, res) => {
   try {
     const { productId } = req.params;
@@ -351,9 +335,7 @@ const deleteProduct = async (req, res) => {
   }
 };
 
-/**
- * Update product stock (Admin only)
- */
+/* Update product stock (Admin only) */
 const updateStock = async (req, res) => {
   try {
     const { productId } = req.params;

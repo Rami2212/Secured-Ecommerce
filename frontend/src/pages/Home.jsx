@@ -239,12 +239,12 @@ const Home = () => {
                     {isAuthenticated ? (
                         <div className="space-x-4">
                             <Link to="/products">
-                                <Button size="lg" variant="secondary">
+                                <Button size="lg" variant="secondary" className="border-white text-black hover:bg-white hover:text-primary-600">
                                     Browse Products
                                 </Button>
                             </Link>
                             <Link to="/dashboard">
-                                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary-600">
+                                <Button size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-primary-600">
                                     Go to Dashboard
                                 </Button>
                             </Link>

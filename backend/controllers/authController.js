@@ -2,9 +2,7 @@ const axios = require('axios');
 const User = require('../models/User');
 const { validationResult } = require('express-validator');
 
-/**
- * Register a new user with Auth0 and local database
- */
+/* Register a new user with Auth0 and local database */
 const register = async (req, res) => {
   try {
     // Check validation errors
@@ -69,7 +67,7 @@ const register = async (req, res) => {
       contactNumber,
       country,
       emailVerified: false,
-      isActive: true // Ensure user is active by default
+      isActive: true
     });
 
     res.status(201).json({
@@ -99,9 +97,7 @@ const register = async (req, res) => {
   }
 };
 
-/**
- * Login user with Auth0 Resource Owner Password Grant
- */
+/* Login user with Auth0 Resource Owner Password Grant */
 const login = async (req, res) => {
   try {
     // Check validation errors
@@ -169,9 +165,7 @@ const login = async (req, res) => {
   }
 };
 
-/**
- * Get current user profile
- */
+/* Get current user profile */
 const getProfile = async (req, res) => {
   try {
     const user = req.currentUser;
@@ -214,9 +208,7 @@ const getProfile = async (req, res) => {
   }
 };
 
-/**
- * Update user profile
- */
+/* Update user profile */
 const updateProfile = async (req, res) => {
   try {
     // Check validation errors
@@ -293,9 +285,7 @@ const updateProfile = async (req, res) => {
   }
 };
 
-/**
- * Refresh access token (placeholder - Auth0 handles this)
- */
+/* Refresh access token (placeholder - Auth0 handles this) */
 const refreshToken = async (req, res) => {
   try {
     res.status(400).json({
@@ -311,9 +301,7 @@ const refreshToken = async (req, res) => {
   }
 };
 
-/**
- * Logout user
- */
+/* Logout user */
 const logout = async (req, res) => {
   try {
     const user = req.currentUser;
@@ -342,9 +330,7 @@ const logout = async (req, res) => {
   }
 };
 
-/**
- * Request password reset
- */
+/* Request password reset */
 const requestPasswordReset = async (req, res) => {
   try {
     const { email } = req.body;
@@ -385,9 +371,7 @@ const requestPasswordReset = async (req, res) => {
   }
 };
 
-/**
- * Check authentication status
- */
+/* Check authentication status */
 const checkAuth = async (req, res) => {
   try {
     // Check if there's an authorization header

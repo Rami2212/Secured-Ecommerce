@@ -217,11 +217,6 @@ SecureCommerce/
 
 ### Frontend (.env)
 ```env
-# Auth0 Configuration
-VITE_AUTH0_DOMAIN=your-auth0-domain.auth0.com
-VITE_AUTH0_CLIENT_ID=your-auth0-client-id
-VITE_AUTH0_AUDIENCE=your-auth0-api-audience
-
 # API Configuration
 VITE_API_BASE_URL=http://localhost:5000/api
 
@@ -237,19 +232,23 @@ PORT=5000
 NODE_ENV=development
 
 # MongoDB Configuration
-MONGODB_URI=your-mongodb-atlas-uri
+MONGODB_URI=mongodb+srv://ramitha:zuS1thh6iENLwRpz@cluster0.ecixdxy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
 # Auth0 Configuration
-AUTH0_DOMAIN=https://your-domain.auth0.com/
-AUTH0_CLIENT_ID=your-client-id
-AUTH0_CLIENT_SECRET=your-client-secret
-AUTH0_AUDIENCE=your-api-audience
+AUTH0_DOMAIN=https://dev-doebww1thx32e0ql.us.auth0.com/
+AUTH0_CLIENT_ID=IsEkANU931CkLWG8loCicGQlznxWfHGL
+AUTH0_CLIENT_SECRET=BSlagIpoQMBf41aTKQjGWa4j1a-pTPZBThrnDDUNo9xWHKIdNeT-wShJFr1Sd4IY
+AUTH0_AUDIENCE=https://dev-doebww1thx32e0ql.us.auth0.com/api/v2/
 
 # JWT Configuration
-JWT_SECRET=your-jwt-secret
+JWT_SECRET=f5f02d56bcece445e84aca039344d1b47d50d140b597d0f8a6324688a1876951f285e40e5bb9f755f71a6dd8da88da845292990cc0939593fcef5930beff5de9
 
 # CORS Configuration
 FRONTEND_URL=http://localhost:5173
+
+# Rate Limiting
+RATE_LIMIT_WINDOW_MS=900000
+RATE_LIMIT_MAX_REQUESTS=100
 ```
 
 ## 🐛 Troubleshooting

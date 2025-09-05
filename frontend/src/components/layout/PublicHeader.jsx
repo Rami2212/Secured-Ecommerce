@@ -200,7 +200,6 @@ const PublicHeader = () => {
                                             variant="danger"
                                             className="w-full justify-center"
                                             onClick={() => {
-                                                // Add logout functionality here
                                                 closeMobileMenu()
                                             }}
                                         >

@@ -2,9 +2,7 @@ const Order = require('../models/Order');
 const Product = require('../models/Product');
 const { validationResult } = require('express-validator');
 
-/**
- * Create a new order
- */
+/* Create a new order */
 const createOrder = async (req, res) => {
   try {
     // Check validation errors
@@ -129,9 +127,7 @@ const createOrder = async (req, res) => {
   }
 };
 
-/**
- * Get all orders for current user
- */
+/* Get all orders for current user */
 const getUserOrders = async (req, res) => {
   try {
     const user = req.currentUser;
@@ -155,9 +151,7 @@ const getUserOrders = async (req, res) => {
   }
 };
 
-/**
- * Get upcoming orders for current user
- */
+/* Get upcoming orders for current user */
 const getUpcomingOrders = async (req, res) => {
   try {
     const user = req.currentUser;
@@ -180,9 +174,7 @@ const getUpcomingOrders = async (req, res) => {
   }
 };
 
-/**
- * Get past orders for current user
- */
+/* Get past orders for current user */
 const getPastOrders = async (req, res) => {
   try {
     const user = req.currentUser;
@@ -205,9 +197,7 @@ const getPastOrders = async (req, res) => {
   }
 };
 
-/**
- * Get order by ID
- */
+/* Get order by ID */
 const getOrderById = async (req, res) => {
   try {
     const { orderId } = req.params;
@@ -248,9 +238,7 @@ const getOrderById = async (req, res) => {
   }
 };
 
-/**
- * Update order (limited fields for users)
- */
+/* Update order (limited fields for users) */
 const updateOrder = async (req, res) => {
   try {
     // Check validation errors
@@ -350,9 +338,7 @@ const updateOrder = async (req, res) => {
   }
 };
 
-/**
- * Cancel order
- */
+/* Cancel order */
 const cancelOrder = async (req, res) => {
   try {
     const { orderId } = req.params;
@@ -413,9 +399,7 @@ const cancelOrder = async (req, res) => {
   }
 };
 
-/**
- * Get all orders (Admin only)
- */
+/* Get all orders (Admin only) */
 const getAllOrders = async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
@@ -472,9 +456,7 @@ const getAllOrders = async (req, res) => {
   }
 };
 
-/**
- * Update order status (Admin only)
- */
+/* Update order status (Admin only) */
 const updateOrderStatus = async (req, res) => {
   try {
     const { orderId } = req.params;
@@ -519,9 +501,7 @@ const updateOrderStatus = async (req, res) => {
   }
 };
 
-/**
- * Get delivery locations
- */
+/* Get delivery locations */
 const getDeliveryLocations = async (req, res) => {
   try {
     const districts = Order.getDistricts();
@@ -542,9 +522,7 @@ const getDeliveryLocations = async (req, res) => {
   }
 };
 
-/**
- * Get delivery times
- */
+/* Get delivery times */
 const getDeliveryTimes = async (req, res) => {
   try {
     const times = Order.getDeliveryTimes();
@@ -565,9 +543,7 @@ const getDeliveryTimes = async (req, res) => {
   }
 };
 
-/**
- * Get order statistics (Admin only)
- */
+/* Get order statistics (Admin only) */
 const getOrderStatistics = async (req, res) => {
   try {
     const stats = await Order.aggregate([

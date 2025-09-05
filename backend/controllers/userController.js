@@ -2,9 +2,7 @@ const User = require('../models/User');
 const Order = require('../models/Order');
 const { validationResult } = require('express-validator');
 
-/**
- * Get current user's dashboard data
- */
+/* Get current user's dashboard data */
 const getDashboard = async (req, res) => {
   try {
     const user = req.currentUser;
@@ -45,9 +43,7 @@ const getDashboard = async (req, res) => {
   }
 };
 
-/**
- * Get user profile
- */
+/* Get user profile */
 const getProfile = async (req, res) => {
   try {
     const user = req.currentUser;
@@ -68,9 +64,7 @@ const getProfile = async (req, res) => {
   }
 };
 
-/**
- * Update user profile
- */
+/* Update user profile */
 const updateProfile = async (req, res) => {
   try {
     // Check validation errors
@@ -129,9 +123,7 @@ const updateProfile = async (req, res) => {
   }
 };
 
-/**
- * Get user's orders summary
- */
+/* Get user's orders summary */
 const getOrdersSummary = async (req, res) => {
   try {
     const user = req.currentUser;
@@ -169,9 +161,7 @@ const getOrdersSummary = async (req, res) => {
   }
 };
 
-/**
- * Deactivate user account
- */
+/* Deactivate user account */
 const deactivateAccount = async (req, res) => {
   try {
     const user = req.currentUser;
@@ -206,9 +196,7 @@ const deactivateAccount = async (req, res) => {
   }
 };
 
-/**
- * Get all users (Admin only)
- */
+/* Get all users (Admin only) */
 const getAllUsers = async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
@@ -264,9 +252,7 @@ const getAllUsers = async (req, res) => {
   }
 };
 
-/**
- * Get user by ID (Admin only)
- */
+/* Get user by ID (Admin only) */
 const getUserById = async (req, res) => {
   try {
     const { userId } = req.params;
@@ -309,9 +295,7 @@ const getUserById = async (req, res) => {
   }
 };
 
-/**
- * Update user status (Admin only)
- */
+/* Update user status (Admin only) */
 const updateUserStatus = async (req, res) => {
   try {
     const { userId } = req.params;
