@@ -97,7 +97,7 @@ const register = async (req, res) => {
   }
 };
 
-/* Login user with Auth0 Resource Owner Password Grant */
+/* Login user with Auth0 */
 const login = async (req, res) => {
   try {
     // Check validation errors
